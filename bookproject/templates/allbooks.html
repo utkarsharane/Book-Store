@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h1>All Books</h1></center>
+    <hr>
+    <table border="1" cellspacing="3px" cellpadding="15px">
+       <tr>
+        <th>Sr.No</th>
+        <th>CoverPhoto</th>
+        <th>Title</th>
+        <th>Author </th>
+        <th>Description</th>
+        <th>Edit</th>
+        <th>Delete</th>
+       </tr>
+       {% for x in bookdata %}
+       <tr>
+        <td>{{forloop.counter}}</td>
+        <td>
+        <img src="{{x.photo.url}}" width="100px"/></td>
+        <td>{{x.title}}</td>
+        <td>{{x.author}}</td>
+        <td>{{x.description}}</td>
+        <td><a href="/editbooks/{{x.id}}">Edit</a></td>
+        <td><a href="/delete/{{x.id}}">Delete</a></td>
+       </tr>
+       {% endfor %}
+    </table>
+</body>
+</html>

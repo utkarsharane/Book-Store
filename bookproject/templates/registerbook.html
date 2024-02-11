@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Book</title>
+</head>
+<body>
+    <h1>Register Books</h1>
+    <form  method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Enter Title</label>
+        <input type="text" name="title"><br>
+        <label>Enter Author Name</label>
+        <input type="text" name="author"><br>
+        <label>Enter Description</label>
+        <input type="text" name="description"><br>
+        <label>Upload Coverphoto</label>
+        <input type="file" name="photo"><br><br>
+        <input type="submit" value="Register">
+        <input type="reset" value="Cancel">
+    </form>
+</body>
+</html>
